@@ -24,6 +24,34 @@ A present with dimensions 1x1x10 requires
 plus 1 square foot of slack, for a total of 43 square feet.
 All numbers in the elves' list are in feet.
 How many total square feet of wrapping paper should they order?
+
+--- Part Two ---
+
+The elves are also running low on ribbon.
+Ribbon is all the same width,
+so they only have to worry about the length they need to order,
+which they would again like to be exact.
+
+The ribbon required to wrap a present
+is the shortest distance around its sides,
+or the smallest perimeter of any one face.
+Each present also requires a bow made out of ribbon as well;
+the feet of ribbon required for the perfect bow is
+equal to the cubic feet of volume of the present.
+Don't ask how they tie the bow, though; they'll never tell.
+
+For example:
+
+ - A present with dimensions 2x3x4 requires
+    2+2+3+3 = 10 feet of ribbon to wrap the present
+    plus 2*3*4 = 24 feet of ribbon for the bow,
+    for a total of 34 feet.
+ - A present with dimensions 1x1x10 requires
+    1+1+1+1 = 4 feet of ribbon to wrap the present
+    plus 1*1*10 = 10 feet of ribbon for the bow,
+    for a total of 14 feet.
+
+How many total feet of ribbon should they order?
  */
 
 #include <stdio.h>
@@ -31,12 +59,17 @@ How many total square feet of wrapping paper should they order?
 #include <string.h>
 
 
+struct Answer {
+    long packing_paper;  // area of packing paper
+    long ribbon_length;  // length of ribbon
+} answer;
+
 /**
  * Solve the problem
  * @param const char **filename file containing the input
- * @return long total packing paper required
+ * @return struct Answer total packing paper required and ribbon length
  */
-long solve(const char *filename) {
+void solve(const char *filename) {
     FILE *fp;  // file pointer for input file
     char *line = NULL;  // line read from file
     ssize_t read;  // bytes read from line in file
@@ -49,8 +82,6 @@ long solve(const char *filename) {
     long max = 0;  // maximum side in current package
 
     int i = 0;  // temporary interger counter
-
-    long packing_paper = 0;  // area of packing paper
 
     // Open and read the file
     fp = fopen(filename, "r");
@@ -70,7 +101,7 @@ long solve(const char *filename) {
         // Add the areas of each side of the package
         // The (x+1) % 3 will always return the values between 0 and 2
         for (i=0; i<3; i++) {
-            packing_paper += 2 * sides[i] * sides[(i+1) % 3];
+            answer.packing_paper += 2 * sides[i] * sides[(i+1) % 3];
         }
 
         // Get the maximum dimension of the package.
@@ -89,7 +120,15 @@ long solve(const char *filename) {
         // x,y,z : max() = 2. min() = 0
         // min1(x) -> x+1 (next side) modulo 3 (to wrap around if needed)
         // min2(x) -> x+2 (second side) modulo 3 (to wrap around if needed)
-        packing_paper += sides[(max + 1) % 3] * sides[(max + 2) % 3];
+        answer.packing_paper += sides[(max + 1) % 3] * sides[(max + 2) % 3];
+
+        // Length of ribbon paper required to wrap around the package
+        // is twice the sides of two smallest sides.
+        // Which is all sides except the max one.
+        answer.ribbon_length += 2 * (sides[(max + 1) % 3] + sides[(max + 2) % 3]);
+
+        // Ribbon required for the bow is volume of the package
+        answer.ribbon_length += sides[0] * sides[1] * sides[2];
     }
 
     // Close the file
@@ -99,16 +138,13 @@ long solve(const char *filename) {
     if (line) {
         free(line);
     }
-
-    return packing_paper;
 }
 
 int main(int args, char **argv)
 {
-    long answer = 0;
-
-    answer = solve("./input.txt");
-    printf("%ld\n", answer);
+    solve("./input.txt");
+    printf("%ld sq.ft of packing_paper, %ld ft of ribbon.\n",
+        answer.packing_paper, answer.ribbon_length);
 
     return 0;
 }
