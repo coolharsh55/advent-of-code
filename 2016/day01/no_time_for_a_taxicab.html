@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <title>no_time_for_a_taxicab.py</title>
+  <link rel="stylesheet" href="pycco.css">
+</head>
+<body>
+<div id='container'>
+  <div id="background"></div>
+  <div class='section'>
+    <div class='docs'><h1>no_time_for_a_taxicab.py</h1></div>
+  </div>
+  <div class='clearall'>
+  <div class='section' id='section-0'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-0'>#</a>
+      </div>
+      
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">__author__</span> <span class="o">=</span> <span class="s2">&quot;Harshvardhan Pandit&quot;</span>
+<span class="n">__license__</span> <span class="o">=</span> <span class="s2">&quot;MIT&quot;</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-1'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-1'>#</a>
+      </div>
+      <h1>Day 1: No Time for a Taxicab</h1>
+<p><a href="http://adventofcode.com/2016/day/1">link</a></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-2'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-2'>#</a>
+      </div>
+      <h2>Problem Statement</h2>
+<p>Santa's sleigh uses a very high-precision clock to guide its movements,
+and the clock's oscillator is regulated by stars.
+Unfortunately, the stars have been stolen... by the Easter Bunny.
+To save Christmas,
+Santa needs you to retrieve all fifty stars by December 25th.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-3'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-3'>#</a>
+      </div>
+      <p>Collect stars by solving puzzles.
+Two puzzles will be made available on each day in the advent calendar;
+the second puzzle is unlocked when you complete the first.
+Each puzzle grants one star. Good luck!</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-4'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-4'>#</a>
+      </div>
+      <p>You're airdropped near Easter Bunny Headquarters in a city somewhere.
+"Near", unfortunately, is as close as you can get -
+the instructions on the Easter Bunny Recruiting Document
+the Elves intercepted start here,
+and nobody had time to work them out further.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-5'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-5'>#</a>
+      </div>
+      <p>The Document indicates that you should start at the given coordinates
+(where you just landed) and face North. Then, follow the provided sequence:
+either turn left (L) or right (R) 90 degrees,
+then walk forward the given number of blocks, ending at a new intersection.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-6'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-6'>#</a>
+      </div>
+      <p>There's no time to follow such ridiculous instructions on foot, though,
+so you take a moment and work out the destination.
+Given that you can only walk on the street grid of the city,
+how far is the shortest path to the destination?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-7'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-7'>#</a>
+      </div>
+      <p>For example:</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-8'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-8'>#</a>
+      </div>
+      <p>Following R2, L3 leaves you
+2 blocks East and 3 blocks North, or 5 blocks away.
+R2, R2, R2 leaves you
+2 blocks due South of your starting position, which is 2 blocks away.
+R5, L5, R5, R3 leaves you 12 blocks away.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-9'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-9'>#</a>
+      </div>
+      <p>How many blocks away is Easter Bunny HQ?</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-10'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-10'>#</a>
+      </div>
+      <h2>Solution logic</h2>
+<p>This looks to be a simple trace the path sort of problem.
+Assume we start at origin <code>(0,0)</code>,
+then use counters to keep track of where we are
+on a virtual grid. Also need to keep track of direction.
+Read the input, then parse it to read whether to go left or right.
+Keep a variable direction to indicate where we are currently moving.
+Direction is a <code>vector (x,y)</code>
+to represent the math to do when calculcating the
+next point on the grid.
+<code>North(0,1); South(0,-1); East(1,0); West(-1,0)</code></p>
+<p><strong>Tricky:</strong> how to convert north to west by reading in left?
+<em>North</em> is <code>(0,1)</code> and West is <code>(-1,0)</code>
+Similarly, <code>West --left--&gt; South</code>,
+which can be written as <code>(-1,0)--L--&gt;(0,-1)</code></p>
+<p>Drawing up a table to see if I can find a pattern or a formula
+<pre>
+  <strong>Table: Turning LEFT</strong>
+  Direction   Value       Turned      Value
+  North       (0,1)       West        (-1,0)
+  West        (-1,0)      South       (0,-1)
+  South       (0,-1)      East        (1,0)
+  East        (1,0)       North       (0,1)</p>
+<p><strong>Table: Turning RIGHT</strong>
+  Direction   Value       Turned      Value
+  North       (0,1)       East        (1,0)
+  West        (-1,0)      North       (0,1)
+  South       (0,-1)      West        (-1,0)
+  East        (1,0)       South       (0,-1)
+</pre></p>
+<p>Looking at the table, it is apparent that on every turn, there is a change
+in the field which contain a non-zero value (x or y)
+So we always swap the active (that's what I'll call the non-zero field) field
+The trick here is the sign of the values. It is not true that the sign always
+changes. For e.g. East--Left--&gt;North</p>
+<pre>Turn left:
+ - swap (x,y = y,x)
+ - apply mask (-1,1)
+Turn right:
+ - swap (x,y = y,x)
+ - apply mask (1,-1)</pre>
+
+<h3>Algorithm</h3>
+<p><pre>
+ - Initialise starting direction as North
+ - Read the input
+ - For every input:
+   - based on turn, get new direction
+   - multiply the direction vector by distance in input
+   - add the new vector to point on graph
+</pre></p>
+<h3>Block distance / Taxicab distance</h3>
+<p>That is simply the number of block we need to walk to get there
+That is the total x distance + total y distance
+So the formula is to take the absolute values of both co-ordinates,
+and add them
+<code>abs(x) + abs(y)</code></p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-11'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-11'>#</a>
+      </div>
+      <p>Get the input data from a file called <code>input.txt</code> in the same folder.
+The file contains the tokens seperated by comma(,).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;./input.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-12'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-12'>#</a>
+      </div>
+      <p>Use namedtuples, because they're so nice ;)
+Actually, use them because they are still tuples, look like class-objects,
+and give more semantic context to the code.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-13'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-13'>#</a>
+      </div>
+      <p>In this case, the Turn is LEFT and RIGHT.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="n">Turns</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Turns&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;left&#39;</span><span class="p">,</span> <span class="s1">&#39;right&#39;</span><span class="p">))</span>
+<span class="n">turns</span> <span class="o">=</span> <span class="n">Turns</span><span class="p">(</span><span class="s1">&#39;L&#39;</span><span class="p">,</span> <span class="s1">&#39;R&#39;</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-14'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-14'>#</a>
+      </div>
+      <p>A VectorPoint is a point with a direction
+I use them to plot the point on the graph, and also to represent the
+direction of movement.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">VectorPoint</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;VectorPoint&#39;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="s1">&#39;y&#39;</span><span class="p">))</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-15'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-15'>#</a>
+      </div>
+      <p>When turning, we apply this mask (the logic if above).</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">mask_left</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">mask_right</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-16'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-16'>#</a>
+      </div>
+      <p>The direction is the starting face, which the problem describes as being
+<strong>NORTH</strong>.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">direction</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-17'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-17'>#</a>
+      </div>
+      <p>The point to be tracked, this is the position on graph.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">point</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">token</span> <span class="ow">in</span> <span class="n">data</span><span class="p">:</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-18'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-18'>#</a>
+      </div>
+      <p>Tokenize the token into turn and number of blocks.
+The first letter represents the direction to turn to, and will only be
+'L' for left, and 'R' for right.
+The numbers after that are the number of blocks to walk.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">turn</span><span class="p">,</span> <span class="n">blocks</span> <span class="o">=</span> <span class="n">token</span><span class="p">[:</span><span class="mi">1</span><span class="p">],</span> <span class="nb">int</span><span class="p">(</span><span class="n">token</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-19'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-19'>#</a>
+      </div>
+      <p>Get mask based on direction to turn</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="k">if</span> <span class="n">turn</span> <span class="o">==</span> <span class="n">turns</span><span class="o">.</span><span class="n">left</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">mask_left</span>
+    <span class="k">if</span> <span class="n">turn</span> <span class="o">==</span> <span class="n">turns</span><span class="o">.</span><span class="n">right</span><span class="p">:</span>
+        <span class="n">mask</span> <span class="o">=</span> <span class="n">mask_right</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-20'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-20'>#</a>
+      </div>
+      <p>The direction is the swapped direction, with the mask applied.
+So the previous <code>(x,y)</code> becomes <code>(y,x) * mask(x,y)</code>.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">direction</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span><span class="n">direction</span><span class="o">.</span><span class="n">y</span> <span class="o">*</span> <span class="n">mask</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="n">direction</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">mask</span><span class="o">.</span><span class="n">y</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-21'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-21'>#</a>
+      </div>
+      <p>The point is now the number of blocks added with the direction applied.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre>    <span class="n">point</span> <span class="o">=</span> <span class="n">VectorPoint</span><span class="p">(</span>
+        <span class="n">point</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">blocks</span> <span class="o">*</span> <span class="n">direction</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
+        <span class="n">point</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">blocks</span> <span class="o">*</span> <span class="n">direction</span><span class="o">.</span><span class="n">y</span><span class="p">)</span></pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+  <div class='section' id='section-22'>
+    <div class='docs'>
+      <div class='octowrap'>
+        <a class='octothorpe' href='#section-22'>#</a>
+      </div>
+      <p>The final distance from origin is the distance of x and y axis.</p>
+    </div>
+    <div class='code'>
+      <div class="highlight"><pre><span class="n">distance</span> <span class="o">=</span> <span class="nb">abs</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">abs</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">distance</span><span class="p">)</span>
+
+</pre></div>
+    </div>
+  </div>
+  <div class='clearall'></div>
+</div>
+</body>
