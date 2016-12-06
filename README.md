@@ -15,19 +15,18 @@ Each puzzle grants one star. Good luck!
 
 ## Repo structure
 
-Solutions for each day are stored in separate folders marked by day numbers. For e.g. the solution for day 1 is in **day01**, with the files titled by the name of the puzzle. In case a puzzle has multiple parts, the solution is separated across different files, appended by the part number. For e.g. the solution for the puzzle 'some_puzzle' is in the file _some_puzzle.ext_ and it's second part is in the file _some_puzzle_part_2.ext_.
+The submissions are sepearated by years. Solutions for each day are stored in separate folders marked by day numbers. For e.g. the solution for day 1 is in **day01**, with the files titled by the name of the puzzle. In case a puzzle has multiple parts, the solution is separated across different files, appended by the part number. For e.g. the solution for the puzzle 'some_puzzle' is in the file _some_puzzle.ext_ and it's second part is in the file _some_puzzle_part_2.ext_.
 
 ## Languages
 
-I'm going to try and implement solutions in as many languages as I can. Here's a list (ambition) of languages I would like to develop in:
+Ideally, the submissions are only going to be in python. I'm going to try and implement solutions in as many languages as I can. Here's a list (ambition) of languages I would like to develop in:
 
  - python3 (primary)
+ - LISP/Scheme
+ - Haskell
  - C (clang-700.1.81)
- - C++ (clang-700.1.81)
- - Java
- - C#
+ - Java/C#
  - Javascript
- - Swift
 
 ### Future work
 
