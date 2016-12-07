@@ -2,20 +2,11 @@
 
 website: [http://adventofcode.com](http://adventofcode.com)
 
-Santa was hoping for a white Christmas,
-but his weather machine's "snow" function
-is powered by stars, and he's fresh out!
-To save Christmas,
-he needs you to collect fifty stars by December 25th.
-
-Collect stars by helping Santa solve puzzles.
-Two puzzles will be made available on each day in the advent calendar;
-the second puzzle is unlocked when you complete the first.
-Each puzzle grants one star. Good luck!
+My solutions to the Advent of Code holiday puzzles.
 
 ## Repo structure
 
-The submissions are sepearated by years. Solutions for each day are stored in separate folders marked by day numbers. For e.g. the solution for day 1 is in **day01**, with the files titled by the name of the puzzle. In case a puzzle has multiple parts, the solution is separated across different files, appended by the part number. For e.g. the solution for the puzzle 'some_puzzle' is in the file _some_puzzle.ext_ and it's second part is in the file _some_puzzle_part_2.ext_.
+The submissions are sepearated by years. For 2016, I have used the ipynb files stored in the python3 folder. For 2015, the submissions are in separate folders based on days.
 
 ## Languages
 
@@ -24,7 +15,8 @@ Ideally, the submissions are only going to be in python. I'm going to try and im
  - python3 (primary)
  - LISP/Scheme
  - Haskell
- - C (clang-700.1.81)
+ - Smalltalk/ML
+ - C
  - Java/C#
  - Javascript
 
